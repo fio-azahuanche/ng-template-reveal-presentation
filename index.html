@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>NG-TEMPLATE</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,139 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" class="present">
+					<h2>ng-template</h2>
+					<p>Creado por <span style="color: #1D2D50;">Fiorela Azahuanche</span></p>
+					<small>10 de junio del 2022</small>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>Contenido</h2>
+					
+					<p class="fragment fade-in-then-out highlight-current-blue">¿Qué es ng-template en Angular?</p>
+					
+					<p class="fragment fade-in-then-out highlight-current-blue">¿Para qué se usa ng-template?</p>
+					
+					<p class="fragment fade-in-then-out highlight-current-blue">¿Cómo se usa ng-template?</p>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Qué es?</h2>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Qué es?</h2>
+					<p>Es un elemento de angular que se utiliza para representar HTML en una plantilla.</p>
+					<p class="fragment" data-fragment-index="1">Sin embargo, no se renderiza directamente en el DOM. </p>
+					<p class="fragment" data-fragment-index="2">Sino que la etiqueta y el contenido dentro de ella serán reemplazados por comentarios al renderizar.</p>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<p>Por ejemplo, si introduces el siguiente código:</p>
+					<pre>
+						<code data-line-numbers><div>How to define a template using ng-Template</div>
+<ng-template>
+	<p>Ng Template contents</p>
+</ng-template></code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<p>Por ejemplo, si introduces el siguiente código:</p>
+					<pre>
+						<code data-line-numbers><div>How to define a template using ng-Template</div>
+<ng-template>
+	<p>Ng Template contents</p>
+</ng-template></code></pre>
+					<pre><code data-trim data-noescape>
+						// Output
+
+						How to define a template using ng-Template
+	  </code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg">
+					<p>Esto se debe a que ng-template sólo define una plantilla, pero no permite que Angular conozca las condiciones para mostrarla.</p>
+					<!-- <p class="fragment" data-fragment-index="1">Por lo tanto, tienes que dar a Angular las condiciones de su visualización -cómo dónde y cuándo mostrarlo. Antes de llegar a eso, primero vamos a entender qué es exactamente ng-template.</p> -->
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Para qué?</h2>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Para qué?</h2>
+					<ul>
+						<li>Para agrupar contenido que no se renderiza.</li><!-- , pero que puede ser utilizado en otras partes de su código -->
+						<li class="fragment" data-fragment-index="1">Para utilizar directivas estructurales como *ngIf, *ngFor, *ngSwitch.</li>
+<!-- 						<li class="fragment" data-fragment-index="2">Puedes utilizar una combinación de estas directivas para construir componentes dinámicos y personalizables, y cambiar completamente el diseño de un componente basado en plantillas de entrada.</li>
+ -->					</ul>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Cómo se usa?</h2>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h2>¿Cómo se usa?</h2>
+					<p>Vamos a probar un ejemplo de su uso</p>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h3>Uso de ng-template con *ngIf</h3>
+					<p>Donde ‘’hello’’ es una variable booleana true:</p>
+					<pre>
+						<code data-line-numbers><ng-template [ngIf]="hello">hello world!!</ng-template></code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<img src="./assets/1.png" alt="">
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<p>¿Qué es lo que ocurre si utilizo un div en lugar de ng-template?</p>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<p>¿Qué es lo que ocurre si utilizo un div en lugar de ng-template?</p>
+					<pre>
+						<code data-line-numbers><div *ngIf="hello"> div hello world!!</div></code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<img src="./assets/2.png" alt="">
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h4>**¿Cuándo utilizar ng-template?</h4>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h4>**¿Cuándo utilizar ng-template?</h4>
+					<p>Vamos a ver un ejemplo:</p>
+					<pre>
+						<code data-line-numbers="1|3-5|7-9"><div *ngIf="hello; then div1 else div2"></div>
+
+<ng-template #div1>
+	<p>div 1</p>
+</ng-template>
+							
+<ng-template #div2>
+	<p>div 2</p>
+</ng-template>
+							
+<p>Hello is {{ hello }}</p>
+</code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<img src="./assets/3.png" alt="">
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<pre>
+						<code data-line-numbers="1|3-5|7-9"><div *ngIf="hello; then div1 else div2"></div>
+
+<div #div1>
+	<p>div 1</p>
+</div>
+							
+<div #div2>
+	<p>div 2</p>
+</div>
+							
+<p>Hello is {{ hello }}</p>
+</code></pre>
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<img src="./assets/4.png" alt="">
+				</section>
+				<section data-background-image="https://wallpaperaccess.com/full/1152217.jpg" data-auto-animate>
+					<h4>Conclusión</h4>
+					<p>ng-template es perfecto para poder llevar a cabo el renderizado de templates condicionales de una forma limpia y óptima.</p>
+				</section>
+
+
 			</div>
 		</div>
 
